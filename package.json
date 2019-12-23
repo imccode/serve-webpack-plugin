@@ -1,6 +1,6 @@
 {
   "name": "serve-webpack-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "一个在本地开启web服务可热更新的webpack插件",
   "main": "lib/index.js",
   "typings": "types/index.d.ts",
@@ -28,13 +28,24 @@
   },
   "homepage": "https://github.com/imccode",
   "scripts": {
+    "tsc": "rm -rf types && tsc",
     "publish-npm": "rm -rf types && tsc && yarn publish --registry https://registry.npmjs.org",
     "publish-npm:next": "rm -rf types && tsc && yarn publish --registry https://registry.npmjs.org --tag next "
   },
-  "dependencies": {},
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-compress": "^3.0.0",
+    "koa-static": "^5.0.0",
+    "querystring": "^0.2.0",
+    "ws": "^7.2.1"
+  },
   "devDependencies": {
+    "@types/koa": "^2.11.0",
+    "@types/koa-compress": "^2.0.9",
+    "@types/koa-static": "^4.0.1",
     "@types/node": "^12.12.5",
     "@types/webpack": "^4.41.0",
+    "@types/ws": "^6.0.4",
     "prettier": "1.19.1",
     "typescript": "latest",
     "webpack": "^4.41.4"
