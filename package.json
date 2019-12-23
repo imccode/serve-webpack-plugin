@@ -4,7 +4,10 @@
   "description": "一个在本地开启web服务可热更新的webpack插件",
   "main": "lib/index.js",
   "typings": "types/index.d.ts",
-  "author": "ccode",
+  "author": {
+    "name": "ccode",
+    "url": "https://github.com/imccode"
+  },
   "files": [
     "LICENSE",
     "README.md",
@@ -26,8 +29,10 @@
   "bugs": {
     "url": "https://github.com/imccode/serve-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/imccode",
+  "homepage": "https://github.com/imccode/serve-webpack-plugin",
   "scripts": {
+    "dev": "webpack --config ./example/webpack.config.js --mode development --display none -w",
+    "build": "webpack --config ./example/webpack.config.js --mode production --display none",
     "tsc": "rm -rf types && tsc",
     "publish-npm": "rm -rf types && tsc && yarn publish --registry https://registry.npmjs.org",
     "publish-npm:next": "rm -rf types && tsc && yarn publish --registry https://registry.npmjs.org --tag next "
@@ -48,7 +53,8 @@
     "@types/ws": "^6.0.4",
     "prettier": "1.19.1",
     "typescript": "latest",
-    "webpack": "^4.41.4"
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
   },
   "prettier": {
     "printWidth": 100,

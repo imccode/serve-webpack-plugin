@@ -1,4 +1,5 @@
-import { Options } from "webpack";
+import { Options } from 'webpack';
+import Application from 'koa';
 /**
  * server-webpack-plugin 本地开发环境
  */
@@ -19,5 +20,7 @@ export interface ServeWebpackPluginOptions {
     hot?: boolean;
     /** 是否开启源码映射 */
     sourceMap?: boolean;
+    /** koa Application */
+    middleware?(server: Application): void;
 }
 export declare type WSMessageType = 'beforeUpdate' | 'invalidUpdate' | 'update' | 'error';

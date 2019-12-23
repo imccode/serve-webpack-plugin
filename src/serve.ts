@@ -17,12 +17,13 @@ class Serve {
   }
 
   initServer() {
+    const { middleware, compress } = this.options
 
     this.httpServer.use(koaStatic(this.compiler.options.output.path))
 
-    if (this.options.compress) {
-      this.httpServer.use(koaCompress())
-    }
+    if (middleware) middleware(this.httpServer)
+
+    if (compress) this.httpServer.use(koaCompress())
 
     this.httpServer.listen(this.options.port)
   }
