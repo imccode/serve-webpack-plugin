@@ -3,7 +3,7 @@ import { ServeWebpackPluginOptions } from './types'
 // 默认配置
 export const defaultOptions: ServeWebpackPluginOptions = {
   port: 33333,
-  devtool: 'cheap-eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
   compress: false,
   hot: true,
   sourceMap: false
@@ -16,7 +16,7 @@ export default (options: ServeWebpackPluginOptions = {}) => {
   }
 
   if (options.sourceMap) {
-    mergeOptions.devtool = '#@cheap-module-eval-source-map'
+    mergeOptions.devtool = 'eval-source-map'
   }
 
   return mergeOptions
