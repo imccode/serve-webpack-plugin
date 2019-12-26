@@ -2,7 +2,6 @@ import path from 'path'
 import { Compiler, HotModuleReplacementPlugin } from 'webpack'
 import WsServe from './hot/wsServe'
 import mergeOptions from './mergeOptions'
-import output from './output'
 import Serve from './serve'
 import { ServeWebpackPluginOptions } from './types'
 import { addEntry } from './utils'
@@ -34,8 +33,6 @@ class ServeWebpackPlugin {
    * @param compiler
    */
   inject(compiler: Compiler) {
-    output(this.options, compiler)
-    compiler.options.stats = 'none'
     compiler.options.watch = true
     compiler.options.devtool = this.options.devtool
   }
