@@ -34,9 +34,7 @@ class ServeWebpackPlugin {
    */
   inject(compiler: Compiler) {
     compiler.options.watch = true
-    compiler.options.devtool = compiler.options.devtool
-      ? compiler.options.devtool
-      : this.options.devtool
+    compiler.options.devtool = this.options.devtool
   }
 
   /**
