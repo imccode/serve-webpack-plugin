@@ -1,6 +1,6 @@
 {
   "name": "serve-webpack-plugin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "一个在本地开启web服务可热更新的webpack插件",
   "main": "lib/index.js",
   "typings": "types/index.d.ts",
@@ -31,8 +31,8 @@
   },
   "homepage": "https://github.com/imccode/serve-webpack-plugin",
   "scripts": {
-    "dev": "webpack --config ./example/webpack.config.js --mode development --display none -w",
-    "build": "webpack --config ./example/webpack.config.js --mode production --display none",
+    "dev": "webpack --config ./example/webpack.config.js -w",
+    "build": "webpack --config ./example/webpack.config.js",
     "tsc": "rm -rf types && tsc",
     "publish-npm": "rm -rf types && tsc && yarn publish --registry https://registry.npmjs.org",
     "publish-npm:next": "rm -rf types && tsc && yarn publish --registry https://registry.npmjs.org --tag next "
