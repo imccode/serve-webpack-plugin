@@ -24,7 +24,7 @@ interface HotType {
   apply(HotOptions?): Promise<Array<number>>
 }
 
-const log = msg => console.warn('Smart-Webpack-Plugin: ' + msg)
+const log = msg => console.warn('Serve-Webpack-Plugin: ' + msg)
 
 class ClientSocket {
   socket: WebSocket

@@ -1,5 +1,6 @@
 import { Compiler } from 'webpack'
 import WebSocket from 'ws'
+import path from 'path'
 import { ServeWebpackPluginOptions, WSMessageType } from '../types'
 
 class WsServe {
@@ -71,7 +72,9 @@ class WsServe {
      */
     invalid.tap(pluginName, (fileName, changeTime) => {
       this.sendWS('beforeUpdate', {
-        fileName,
+        fileName: path.isAbsolute(fileName)
+          ? path.relative(this.compiler.context, fileName)
+          : fileName,
         changeTime
       })
     })
