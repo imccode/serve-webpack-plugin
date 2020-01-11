@@ -34,7 +34,7 @@ class ServeWebpackPlugin {
    */
   inject(compiler: Compiler) {
     compiler.options.watch = true
-    compiler.options.devtool = this.options.devtool
+    compiler.options.devtool = 'eval-source-map'
   }
 
   /**

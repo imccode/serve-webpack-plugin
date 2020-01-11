@@ -6,5 +6,6 @@ declare class Serve {
     private compiler;
     constructor(options: ServeWebpackPluginOptions, compiler: Compiler);
     initServer(): void;
+    setupProxy(): void;
 }
 export default Serve;
