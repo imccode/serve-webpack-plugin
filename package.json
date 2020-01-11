@@ -1,6 +1,6 @@
 {
   "name": "serve-webpack-plugin",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "一个在本地开启web服务可热更新的webpack插件",
   "main": "lib/index.js",
   "typings": "types/index.d.ts",
