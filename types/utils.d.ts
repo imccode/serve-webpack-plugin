@@ -1,4 +1,4 @@
-import { Entry, EntryFunc } from "webpack";
+import { Entry, EntryFunc } from 'webpack';
 /**
  * 构造一个新的entry
  */
