@@ -14,5 +14,7 @@ export default (options: ServeWebpackPluginOptions = {}) => {
     ...options
   }
 
+  process.env.MESSAGE_PORT = mergeOptions.port.toString()
+
   return mergeOptions
 }
