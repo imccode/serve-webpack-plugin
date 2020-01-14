@@ -20,8 +20,6 @@ class Serve {
   initServer() {
     const { historyApiFallback, compress, proxy } = this.options
 
-    this.httpServer.use(express.static(this.compiler.options.output.path))
-
     if (compress) this.httpServer.use(compression())
 
     if (historyApiFallback)
@@ -30,6 +28,8 @@ class Serve {
       )
 
     if (proxy) this.setupProxy()
+
+    this.httpServer.use(express.static(this.compiler.options.output.path))
 
     this.httpServer.listen(this.options.port)
   }
